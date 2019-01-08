@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "esp_wifi.h"
 #include "esp_system.h"
@@ -5,6 +6,22 @@
 #include "esp_event_loop.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
+
+// ------- Sketch begin --------
+
+int level = 0;
+
+void setup() {
+	printf("Hello World from setup()\n");
+	gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
+}
+
+void loop() {
+	printf("Blink in loop, set to %d...\n", level);
+    gpio_set_level(GPIO_NUM_4, level);
+    level = !level;
+    vTaskDelay(300 / portTICK_PERIOD_MS);
+}
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -31,12 +48,10 @@ void app_main(void)
     ESP_ERROR_CHECK( esp_wifi_start() );
     ESP_ERROR_CHECK( esp_wifi_connect() );
 
-    gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
-    int level = 0;
+    // run sketch
+    setup();
     while (true) {
-        gpio_set_level(GPIO_NUM_4, level);
-        level = !level;
-        vTaskDelay(300 / portTICK_PERIOD_MS);
+        loop();
     }
 }
 
