@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1203738736/BATCH_BUILD/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1203738736/BATCH_BUILD/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1203738736/BATCH_BUILD/value=1
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1203738736/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.1203738736/appendContributed=true
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.763337587/BATCH_BUILD/delimiter=\:
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.763337587/BATCH_BUILD/operation=append
 environment/project/cdt.managedbuild.toolchain.gnu.cross.base.763337587/BATCH_BUILD/value=1
